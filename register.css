@@ -1,0 +1,214 @@
+/* register.css - خاص باستمارة الانخراط (تعديل تنسيق القائمة) */
+
+@import url('style.css');
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* تحديث تصميم حاوية معلومات الدفع */
+.payment-info.updated-info {
+    background-color: #E8F5E9; 
+    color: #1B5E20;
+    border: 2px solid var(--secondary-color); 
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-info.updated-info .info-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #A5D6A7;
+    padding-bottom: 10px;
+}
+
+.payment-info.updated-info .info-step i {
+    font-size: 1.8em;
+    margin-left: 15px;
+    color: var(--primary-color); 
+}
+
+.payment-info.updated-info .info-details {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.payment-info.updated-info .info-details i {
+    font-size: 1.5em;
+    margin-left: 15px;
+    margin-top: 5px;
+    color: var(--accent-color); 
+}
+
+/* نمط القائمة (UL) داخل حاوية الدفع */
+.payment-info.updated-info ul.discount-list {
+    list-style: none; /* إزالة النقاط الافتراضية */
+    padding-right: 0;
+    margin-top: 10px;
+}
+
+.payment-info.updated-info ul.discount-list li {
+    padding-right: 25px; /* مسافة للنص بعد الأيقونة */
+    position: relative;
+    margin-bottom: 8px;
+    text-align: right;
+}
+
+.payment-info.updated-info ul.discount-list li i {
+    /* وضع الأيقونة كنقطة للقائمة */
+    position: absolute;
+    right: 0;
+    font-size: 1.1em; /* حجم أكبر قليلاً */
+    color: var(--secondary-color);
+    margin-left: 0;
+}
+
+.payment-info.updated-info .amount {
+    font-weight: 900;
+    color: #D35400; 
+    font-size: 1.15em;
+}
+
+/* .info-details wide-content لضمان أن القائمة لا تتشوه */
+.payment-info.updated-info .info-details.wide-content > div {
+    flex-grow: 1; 
+}
+
+
+/* - - - - بقية أنماط الاستمارة تبقى كما هي - - - - */
+
+.registration-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.full-width {
+    grid-column: 1 / -1; 
+}
+
+/* زر الإرسال */
+.submit-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit-button i {
+    margin-left: 10px;
+}
+
+.submit-button:hover {
+    background-color: #1E7E34;
+    transform: translateY(-2px);
+}
+
+/* رسائل الحالة */
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    grid-column: 1 / -1;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* تحسين الاستجابة للهواتف الصغيرة (تعديلات شاملة) */
+@media (max-width: 768px) {
+    /* 1. جعل تنسيق Grid عمودياً بالكامل */
+    .registration-form {
+        grid-template-columns: 1fr; /* حقل واحد لكل سطر */
+        gap: 15px; /* تقليص المسافة بين الحقول */
+        padding: 15px;
+    }
+
+    /* 2. ضمان أن جميع العناصر تشغل عرضها بالكامل على الهاتف */
+    .form-group, .full-width {
+        grid-column: 1 / -1; 
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* 3. تعديل حجم العنوان ليكون مناسباً للهاتف */
+    .form-container h1 {
+        font-size: 1.8em;
+    }
+    
+    /* 4. جعل معلومات الدفع عمودية */
+    .payment-info.updated-info .info-details {
+        flex-direction: column; /* ترتيب التفاصيل عمودياً */
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+    
+    .payment-info.updated-info .info-details i {
+        margin-bottom: 5px;
+    }
+
+    /* 5. تعديل المسافات في القائمة */
+    .payment-info.updated-info ul.discount-list li {
+        padding-right: 20px;
+    }
+}

@@ -1,0 +1,227 @@
+/* style.css - CSS المشترك للموقع وتصميم الاستجابة (التصحيح النهائي) */
+
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300;400;700&display=swap');
+
+:root {
+    /* ألوان الكشافة الرئيسية */
+    --primary-color: #007BFF;   /* أزرق */
+    --secondary-color: #28A745; /* أخضر */
+    --accent-color: #FFC107;    /* أصفر/ذهبي */
+    --dark-color: #343A40;      /* أسود/داكن للـ Navbar */
+    --light-color: #F8F9FA;     /* أبيض فاتح */
+    --text-color: #333;
+    
+    --header-font: 'Changa', sans-serif;
+    --body-font: 'Changa', sans-serif;
+}
+
+/* إعادة تعيين أساسية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    direction: rtl; 
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: right;
+}
+
+/* نمط الكلمات المهمة (بين <strong>) */
+strong {
+    font-weight: 700;
+    color: var(--secondary-color);
+    padding: 0 2px;
+    border-bottom: 2px solid var(--accent-color);
+    transition: color 0.3s;
+}
+
+/* خلفية جذابة للكشافة */
+.page-bg {
+    /* تم حذف مسار المجلد 'images/' لأن الصورة الآن في نفس مستوى ملف CSS */
+    background: url('scout_background_high_quality.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    /* المسافة العلوية اللازمة لترك مكان للـ Navbar المثبت */
+    padding-top: 80px; 
+    background-attachment: fixed; 
+}
+
+/* الشريط العلوي (Navigation Bar) - التثبيت الكامل */
+.navbar {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* التثبيت الكامل في أعلى الصفحة */
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.navbar a {
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* تنسيق زر الهامبرغر (مخفي افتراضياً على الحاسوب) */
+.hamburger-menu {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0 10px;
+    color: var(--secondary-color); 
+}
+
+/* محتويات الصفحة الداخلية */
+.content-container {
+    background: rgba(255, 255, 255, 0.85); 
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2, h3 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block; 
+    padding-bottom: 5px;
+}
+
+/* قسم روابط التواصل الاجتماعي */
+.social-links {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+
+/* ---- استعلامات الوسائط للهواتف (عرض 768px وأقل) ---- */
+@media (max-width: 768px) {
+    
+    /* 1. تنسيق الشريط العلوي */
+    .navbar {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 10px 15px; 
+        
+        /* إزالة أي overrides قد تلغي خاصية fixed */
+        position: fixed; 
+        top: 0;
+        /* هذا السطر كان يسبب المشكلة في بعض الأكواد السابقة */
+        /* position: relative; لا يجب أن تستخدم هنا */
+    }
+    
+    /* 2. إظهار زر الهامبرغر وتثبيته في اليسار */
+    .hamburger-menu {
+        display: block; 
+        position: absolute;
+        left: 15px; 
+        top: 10px; /* لجعله في المنتصف عمودياً */
+        z-index: 1000;
+        padding: 5px; 
+    }
+
+    /* 3. إخفاء القائمة افتراضياً وتنسيقها لتكون منبثقة */
+    .navbar nav {
+        display: none; 
+        flex-direction: column; 
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        
+        /* يجب أن تبدأ القائمة من بداية الشاشة أفقياً */
+        right: 0; 
+        
+        /* يجب أن تبدأ القائمة من أسفل الـ Navbar تماماً (50px هو ارتفاع الـ Navbar التقريبي) */
+        top: 50px; 
+        
+        background-color: rgba(0, 0, 0, 0.9); 
+        
+        z-index: 999;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        padding: 0;
+    }
+    
+    /* 4. إظهار القائمة عند النقر (فئة active) */
+    .navbar nav.active {
+        display: flex; 
+    }
+
+    /* 5. تنسيق روابط القائمة المفتوحة */
+    .navbar nav a {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+        margin: 0;
+        color: #ffffff; 
+    }
+    
+    .navbar nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 6. التعديل الخاص بـ المحتوى الرئيسي */
+    .page-bg {
+        /* تقليل الـ padding-top للهاتف */
+        padding-top: 60px; 
+    }
+
+    .content-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+}

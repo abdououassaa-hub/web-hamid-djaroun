@@ -1,0 +1,114 @@
+/* learn.css - خاص بقسم ماذا يتعلم ابني */
+
+/* استيراد الخطوط المشتركة */
+@import url('style.css');
+
+.learn-section h3 {
+    color: var(--secondary-color); /* لون كشفي أخضر مميز */
+    margin-top: 25px;
+    border-bottom: 2px dashed var(--accent-color);
+    padding-bottom: 5px;
+}
+
+.learn-section ul {
+    list-style-type: none; /* إزالة التنقيط الافتراضي */
+    padding: 0;
+    margin-right: 20px;
+}
+
+.learn-section ul li {
+    background: var(--light-color);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-right: 5px solid var(--primary-color); /* شريط جانبي حيوي */
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.05em;
+}
+
+.learn-section ul li:hover {
+    background-color: #E6F3FF; /* لون فاتح عند المرور */
+    transform: translateX(-5px); /* حركة ديناميكية بسيطة */
+}
+
+/* رموز قبل عناصر القائمة */
+.learn-section ul li::before {
+    content: "✅ ";
+    margin-left: 10px;
+    font-weight: bold;
+}
+/* تنسيق قسم التعلم (Learning Section) */
+.learn-section h1 {
+    color: var(--primary-color);
+}
+
+.learning-grid {
+    display: grid;
+    /* تخطيط الشبكة: بطاقتان في كل سطر على الشاشات الكبيرة */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.learning-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.learning-card h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.learning-card ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+.learning-card ul li {
+    padding-right: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.learning-card ul li::before {
+    content: "✔️"; /* رمز صح */
+    position: absolute;
+    right: 0;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+/* لضمان أن بعض البطاقات تشغل العرض كاملاً عند الحاجة */
+.learning-card.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ---- استعلامات الوسائط للهواتف (ضمان عمود واحد) ---- */
+@media (max-width: 768px) {
+    .learning-grid {
+        /* جعلها عموداً واحداً على الهاتف */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .learning-card {
+        padding: 20px;
+    }
+
+    .learning-card.full-width {
+        grid-column: auto; /* إلغاء خاصية full-width على الهاتف */
+    }
+}

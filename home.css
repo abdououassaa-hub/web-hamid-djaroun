@@ -1,0 +1,87 @@
+/* home.css - خاص بالصفحة الرئيسية لزيادة الحيوية والشفافية */
+
+@import url('style.css');
+
+/* الشريط الرئيسي (Hero Section) الذي سيضم رسالة الترحيب */
+.hero-section {
+    padding: 80px 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4); /* خلفية معتمة قليلاً لتوضيح النص الأبيض عليها */
+    color: white;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 90%; /* يسمح بظهور مساحة أكبر من الخلفية حولها */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--accent-color); /* لون جذاب مميز */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* زر الانضمام الملهم */
+.join-button {
+    background-color: var(--secondary-color); /* الأخضر الكشفي */
+    color: white;
+    padding: 15px 40px;
+    border: 3px solid var(--accent-color); /* إطار أصفر جذاب */
+    border-radius: 50px; /* شكل دائري أكثر حداثة */
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+.join-button:hover {
+    background-color: #1E7E34;
+    transform: scale(1.05); /* حركة ديناميكية عند المرور */
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* استجابة الهاتف */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 50px 20px;
+        max-width: 95%;
+    }
+    .hero-section h1 {
+        font-size: 2em;
+    }
+    .hero-section p {
+        font-size: 1.1em;
+    }
+    .join-button {
+        font-size: 1.1em;
+        padding: 12px 30px;
+    }
+}
+/* ---- 3. استعلامات الوسائط الخاصة بالصفحة الرئيسية ---- */
+@media (max-width: 768px) {
+    /* إذا كنت تستخدم خاصية display: flex أو display: grid في الصفحة الرئيسية */
+    
+    /* مثال على جعل الأقسام المجاورة عمودية (قد تحتاج لتعديل هذه الفئة بناءً على تصميمك الفعلي) */
+    .main-section, .info-blocks {
+        flex-direction: column;
+    }
+    
+    /* جعل أي كتل متجاورة تشغل العرض كاملاً */
+    .info-block, .feature-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* إذا كانت لديك صورة كبيرة في البداية */
+    .hero-section img {
+        height: 250px; /* تقليص ارتفاع الصورة */
+    }
+}
