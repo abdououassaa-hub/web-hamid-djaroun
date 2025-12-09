@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استمارة الانخراط - فوج القائد حميد حعرون</title>
+    <title>استمارة الانخراط - فوج القائد حميد جعرون</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
@@ -13,7 +13,7 @@
 <body class="page-bg">
 
     <header class="navbar">
-        <div class="logo">⚜️ فوج القائد حميد حعرون ⚜️</div>
+        <div class="logo">⚜️ فوج القائد حميد جعرون ⚜️</div>
         
         <button class="hamburger-menu" id="hamburgerBtn">
             &#9776; 
@@ -29,7 +29,7 @@
     </header>
 
     <main class="content-container form-container">
-        <h1>🖊️ استمارة الانخراط في فوج القائد حميد حعرون</h1>
+        <h1>🖊️ استمارة الانخراط في فوج القائد حميد جعرون</h1>
         <p>
             الرجاء ملء جميع الحقول المطلوبة بدقة وعناية لتسهيل عملية التسجيل والانضمام إلى الفوج.
         </p>
@@ -58,7 +58,7 @@
             </div>
         </div>
         
-        <form id="registrationForm" class="registration-form" name="registration" method="POST" netlify action="/success.html">
+        <form id="registrationForm" class="registration-form" method="POST" target="hidden_iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSeAwV9FkVWrfq6eRNK9qJn__RiMnm9D3Vv5-CB-tBacFFnlPA/formResponse">
     
             <input type="hidden" name="form-name" value="registration" />
             
@@ -66,22 +66,22 @@
             
             <div class="form-group">
                 <label for="childName">الاسم واللقب كاملاً (للطفل/المنخرط) <span style="color: red;">*</span></label>
-                <input type="text" id="childName" name="childName" required>
+                <input type="text" id="childName" name="entry.1018330962" required> 
             </div>
             
             <div class="form-group">
                 <label for="childAge">العمر (الحد الأدنى 5 سنوات) <span style="color: red;">*</span></label>
-                <input type="number" id="childAge" name="childAge" min="5" max="17" required>
+                <input type="number" id="childAge" name="entry.1492329302" min="5" max="17" required>
             </div>
             
             <div class="form-group">
                 <label for="studyYear">السنة الدراسية الحالية <span style="color: red;">*</span></label>
-                <input type="text" id="studyYear" name="studyYear" required placeholder="مثال: سنة خامسة ابتدائي / أولى متوسط">
+                <input type="text" id="studyYear" name="entry.1311053428" required placeholder="مثال: سنة خامسة ابتدائي / أولى متوسط">
             </div>
 
             <div class="form-group">
                 <label for="status">الحالة الاجتماعية (يتيم/غير يتيم) <span style="color: red;">*</span></label>
-                <select id="status" name="status" required>
+                <select id="status" name="entry.146522858" required>
                     <option value="">اختر الحالة</option>
                     <option value="غير يتيم">غير يتيم</option>
                     <option value="يتيم">يتيم (فقد الأب أو الأم)</option>
@@ -93,32 +93,41 @@
             
             <div class="form-group">
                 <label for="fatherName">اسم ولقب الأب كاملاً <span style="color: red;">*</span></label>
-                <input type="text" id="fatherName" name="fatherName" required>
+                <input type="text" id="fatherName" name="entry.1221650630" required>
             </div>
             
             <div class="form-group">
                 <label for="motherName">اسم ولقب الأم كاملاً <span style="color: red;">*</span></label>
-                <input type="text" id="motherName" name="motherName" required>
+                <input type="text" id="motherName" name="entry.1051910243" required>
             </div>
             
             <div class="form-group">
                 <label for="parentPhone">رقم هاتف ولي الأمر <span style="color: red;">*</span></label>
-                <input type="text" id="parentPhone" name="parentPhone" required placeholder="مثال: 07xxxxxx / 06xxxxxx">
+                <input type="text" id="parentPhone" name="entry.1340157077" required placeholder="مثال: 07xxxxxx / 06xxxxxx">
             </div>
 
             <div class="form-group">
                 <label for="parentEmail">البريد الإلكتروني (لتلقي المعلومات) <span style="color: red;">*</span></label>
-                <input type="email" id="parentEmail" name="parentEmail" required>
+                <input type="email" id="parentEmail" name="entry.1990422116" required>
             </div>
 
             <div class="form-group full-width">
                 <label for="address">العنوان الكامل <span style="color: red;">*</span></label>
-                <input type="text" id="address" name="address" required>
+                <input type="text" id="address" name="entry.1065640236" required>
             </div>
 
             <button type="submit" class="submit-button">إرسال استمارة التسجيل</button>
             
         </form>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location='/success.html'; }"></iframe>
+
+        <script>
+            var submitted = false;
+            document.getElementById('registrationForm').addEventListener('submit', function() {
+                submitted = true;
+            });
+        </script>
         
         </main>
 
@@ -128,7 +137,7 @@
             <a href="https://www.facebook.com/profile.php?id=100072226993570" target="_blank" title="فيسبوك"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/fawdj_hamid_djaroun/" target="_blank" title="انستغرام"><i class="fab fa-instagram"></i></a>
         </div>
-        <p style="font-size: 0.8em; margin-top: 10px;">&copy; 2025 فوج القائد حميد حعرون. جميع الحقوق محفوظة.</p>
+        <p style="font-size: 0.8em; margin-top: 10px;">&copy; 2025 فوج القائد حميد جعرون. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script>
