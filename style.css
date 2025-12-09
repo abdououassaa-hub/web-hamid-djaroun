@@ -42,7 +42,8 @@ strong {
 
 /* خلفية جذابة للكشافة */
 .page-bg {
-    background: url('images/scout_background_high_quality.jpg') no-repeat center center/cover;
+    /* تم حذف مسار المجلد 'images/' لأن الصورة الآن في نفس مستوى ملف CSS */
+    background: url('scout_background_high_quality.jpg') no-repeat center center/cover;
     min-height: 100vh;
     /* المسافة العلوية اللازمة لترك مكان للـ Navbar المثبت */
     padding-top: 80px; 
