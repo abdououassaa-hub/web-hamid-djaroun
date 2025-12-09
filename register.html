@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة الانخراط - فوج القائد حميد حعرون</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="page-bg">
+
+    <header class="navbar">
+        <div class="logo">⚜️ فوج القائد حميد حعرون ⚜️</div>
+        
+        <button class="hamburger-menu" id="hamburgerBtn">
+            &#9776; 
+        </button>
+
+        <nav id="mainNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="laws.html">القوانين</a>
+            <a href="register.html">استمارة الانخراط</a>
+            <a href="faq.html">الأسئلة الشائعة</a>
+            <a href="what_to_learn.html">ماذا يتعلم أبني؟</a>
+        </nav>
+    </header>
+
+    <main class="content-container form-container">
+        <h1>🖊️ استمارة الانخراط في فوج القائد حميد حعرون</h1>
+        <p>
+            الرجاء ملء جميع الحقول المطلوبة بدقة وعناية لتسهيل عملية التسجيل والانضمام إلى الفوج.
+        </p>
+
+        <div class="payment-info updated-info">
+            <div class="info-step">
+                <i class="fas fa-hand-point-right"></i>
+                <p><strong>خطوة التسجيل:</strong> يتم إرسال الاستمارة أولاً، والدفع يكون لاحقاً عند الحضور أو القبول الرسمي.</p>
+            </div>
+            
+            <div class="info-details">
+                <i class="fas fa-money-bill-wave"></i>
+                <p><strong>مبلغ الانخراط السنوي الأساسي:</strong> <span class="amount">1200 دج</span> (تدفع لمرة واحدة سنوياً).</p>
+            </div>
+
+            <div class="info-details wide-content">
+                <i class="fas fa-percent"></i>
+                <div>
+                    <strong>تخفيضات هامة:</strong> يتم تطبيق تخفيض في المبلغ في الحالات التالية:
+                    <ul class="discount-list">
+                        <li><i class="fas fa-child"></i> تخفيض خاص للأبناء الأيتام.</li>
+                        <li><i class="fas fa-users"></i> تخفيض إذا سجل الولي ابنين أو أكثر في الفوج.</li>
+                        <li><i class="fas fa-phone-alt"></i> سيتم إبلاغكم بالمبلغ النهائي بعد مراجعة الاستمارة.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <form id="registrationForm" class="registration-form" name="registration" method="POST" netlify action="/success.html">
+    
+            <input type="hidden" name="form-name" value="registration" />
+            
+            <h2 class="full-width" style="color: var(--secondary-color); border: none;">بيانات المنخرط (الابن)</h2>
+            
+            <div class="form-group">
+                <label for="childName">الاسم واللقب كاملاً (للطفل/المنخرط) <span style="color: red;">*</span></label>
+                <input type="text" id="childName" name="childName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="childAge">العمر (الحد الأدنى 5 سنوات) <span style="color: red;">*</span></label>
+                <input type="number" id="childAge" name="childAge" min="5" max="17" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="studyYear">السنة الدراسية الحالية <span style="color: red;">*</span></label>
+                <input type="text" id="studyYear" name="studyYear" required placeholder="مثال: سنة خامسة ابتدائي / أولى متوسط">
+            </div>
+
+            <div class="form-group">
+                <label for="status">الحالة الاجتماعية (يتيم/غير يتيم) <span style="color: red;">*</span></label>
+                <select id="status" name="status" required>
+                    <option value="">اختر الحالة</option>
+                    <option value="غير يتيم">غير يتيم</option>
+                    <option value="يتيم">يتيم (فقد الأب أو الأم)</option>
+                    <option value="يتيم الأبوين">يتيم الأبوين</option>
+                </select>
+            </div>
+
+            <h2 class="full-width" style="color: var(--secondary-color); border: none; margin-top: 20px;">بيانات ولي الأمر</h2>
+            
+            <div class="form-group">
+                <label for="fatherName">اسم ولقب الأب كاملاً <span style="color: red;">*</span></label>
+                <input type="text" id="fatherName" name="fatherName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="motherName">اسم ولقب الأم كاملاً <span style="color: red;">*</span></label>
+                <input type="text" id="motherName" name="motherName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="parentPhone">رقم هاتف ولي الأمر <span style="color: red;">*</span></label>
+                <input type="text" id="parentPhone" name="parentPhone" required placeholder="مثال: 07xxxxxx / 06xxxxxx">
+            </div>
+
+            <div class="form-group">
+                <label for="parentEmail">البريد الإلكتروني (لتلقي المعلومات) <span style="color: red;">*</span></label>
+                <input type="email" id="parentEmail" name="parentEmail" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="address">العنوان الكامل <span style="color: red;">*</span></label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <button type="submit" class="submit-button">إرسال استمارة التسجيل</button>
+            
+        </form>
+        
+        </main>
+
+    <footer class="social-links">
+        <p>تابعنا على منصات التواصل:</p>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=100072226993570" target="_blank" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/fawdj_hamid_djaroun/" target="_blank" title="انستغرام"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p style="font-size: 0.8em; margin-top: 10px;">&copy; 2025 فوج القائد حميد حعرون. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('mainNav');
+        const btn = document.getElementById('hamburgerBtn');
+
+        btn.addEventListener('click', function() {
+            // إضافة/إزالة الفئة 'active' التي سيتحكم بها CSS
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

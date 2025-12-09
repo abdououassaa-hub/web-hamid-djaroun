@@ -1,0 +1,53 @@
+/* laws.css - خاص بقسم القوانين */
+
+@import url('style.css');
+
+.laws-list {
+    list-style: none;
+    padding: 0;
+}
+
+.law-item {
+    background-color: #ffffff;
+    border-left: 8px solid var(--accent-color);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.law-item h3 {
+    color: var(--dark-color);
+    border-bottom: 1px dashed var(--primary-color);
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+/* تنسيق قسم القوانين */
+.laws-list {
+    margin-top: 30px;
+    padding: 0 15px;
+}
+
+.law-item {
+    background-color: #ffffff; /* خلفية بيضاء لكل قانون */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-right: 5px solid var(--primary-color); /* شريط أحمر مميز */
+}
+
+.law-item h3 {
+    color: var(--dark-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+.law-item p {
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
